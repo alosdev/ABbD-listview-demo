@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="list_view_examples">
+        <item >simple list item</item>
+        <item >two rows</item>
+        <item >Cursor adapter</item>
+    </string-array>
+  
+</resources>
