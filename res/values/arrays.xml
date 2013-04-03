@@ -4,6 +4,7 @@
         <item >simple list item</item>
         <item >two rows</item>
         <item >Cursor adapter</item>
+        <item >add row</item>
     </string-array>
   
 </resources>

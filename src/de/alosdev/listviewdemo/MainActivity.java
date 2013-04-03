@@ -1,5 +1,7 @@
 package de.alosdev.listviewdemo;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,6 +13,8 @@ import android.widget.Toast;
 
 
 public class MainActivity extends Activity implements OnItemClickListener {
+  private ArrayAdapter<String> adapter;
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -18,15 +22,24 @@ public class MainActivity extends Activity implements OnItemClickListener {
 
     ListView list = (ListView) findViewById(R.id.list);
     String[] array = getResources().getStringArray(R.array.list_view_examples);
-    ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
-      android.R.id.text1, array);
+    adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,
+      android.R.id.text1, new ArrayList<String>(Arrays.asList(array)));
     list.setAdapter(adapter);
     list.setOnItemClickListener(this);
   }
 
   @Override
   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-    Toast.makeText(this, "you selected position: " + (position + 1), Toast.LENGTH_SHORT).show();
-  }
+    switch (position) {
+      case 3: {
+        adapter.add("added item " + position);
+        break;
+      }
 
+      default: {
+        Toast.makeText(this, "you selected position: " + (position + 1), Toast.LENGTH_SHORT).show();
+        break;
+      }
+    }
+  }
 }
