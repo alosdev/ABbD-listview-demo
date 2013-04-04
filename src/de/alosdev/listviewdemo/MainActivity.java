@@ -52,6 +52,11 @@ public class MainActivity extends Activity implements OnItemClickListener {
         break;
       }
 
+      case 5: {
+        startActivity(new Intent(this, MultiSelectActivity.class));
+        break;
+      }
+
       default: {
         Toast.makeText(this, "you selected position: " + (position + 1), Toast.LENGTH_SHORT).show();
         break;

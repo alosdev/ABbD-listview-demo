@@ -6,6 +6,7 @@
         <item >ListActivity</item>
         <item >add row</item>
         <item >ListFragment</item>
+        <item >MultiSelect</item>
     </string-array>
   
 </resources>

@@ -33,6 +33,10 @@
       android:name="de.alosdev.listviewdemo.ListFragmentActivity"
       android:label="ListFragment" >
     </activity>
+    <activity
+      android:name="de.alosdev.listviewdemo.MultiSelectActivity"
+      android:label="MultiSelect" >
+    </activity>
   </application>
 
 </manifest>
