@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 public class CustomAdapterActivity extends Activity implements OnItemClickListener {
   private ArrayAdapter<String> adapter;
+  private int counter = 1;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,7 @@ public class CustomAdapterActivity extends Activity implements OnItemClickListen
   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
     switch (position) {
       case 3: {
-        adapter.add("added item " + position);
+        adapter.add("added item " + counter++);
         break;
       }
 
@@ -62,7 +63,13 @@ public class CustomAdapterActivity extends Activity implements OnItemClickListen
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-      View v = inflater.inflate(resource, parent, false);
+      View v;
+      if (null == convertView) {
+        v = inflater.inflate(resource, parent, false);
+      } else {
+        v = convertView;
+      }
+
       TextView text = (TextView) v.findViewById(textViewResourceId);
       text.setText(getItem(position));
       if ((position % 2) == 0) {
