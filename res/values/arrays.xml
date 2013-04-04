@@ -8,6 +8,7 @@
         <item >ListFragment</item>
         <item >MultiSelect</item>
         <item >Header/Footer</item>
+        <item >SimpleCursorAdapter</item>
     </string-array>
   
 </resources>
