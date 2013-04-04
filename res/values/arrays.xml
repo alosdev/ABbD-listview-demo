@@ -3,7 +3,7 @@
     <string-array name="list_view_examples">
         <item >simple list item</item>
         <item >custom row view</item>
-        <item >Cursor adapter</item>
+        <item >ListActivity</item>
         <item >add row</item>
     </string-array>
   
