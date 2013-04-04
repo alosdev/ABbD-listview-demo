@@ -49,6 +49,10 @@ public class CustomAdapterActivity extends Activity implements OnItemClickListen
     }
   }
 
+  private static class Holder {
+    public TextView text;
+  }
+
   private class CustomArrayAdapter extends ArrayAdapter<String> {
     private final int textViewResourceId;
     private final int resource;
@@ -63,21 +67,25 @@ public class CustomAdapterActivity extends Activity implements OnItemClickListen
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-      View v;
+      final View v;
+      final Holder holder;
       if (null == convertView) {
         v = inflater.inflate(resource, parent, false);
+        holder = new Holder();
+        holder.text = (TextView) v.findViewById(textViewResourceId);
+        v.setTag(holder);
       } else {
         v = convertView;
+        holder = (Holder) v.getTag();
       }
 
-      TextView text = (TextView) v.findViewById(textViewResourceId);
-      text.setText(getItem(position));
+      holder.text.setText(getItem(position));
       if ((position % 2) == 0) {
-        text.setBackgroundColor(getResources().getColor(R.color.white));
-        text.setTextColor(getResources().getColor(R.color.black));
+        holder.text.setBackgroundColor(getResources().getColor(R.color.white));
+        holder.text.setTextColor(getResources().getColor(R.color.black));
       } else {
-        text.setBackgroundColor(getResources().getColor(R.color.blue));
-        text.setTextColor(getResources().getColor(R.color.white));
+        holder.text.setBackgroundColor(getResources().getColor(R.color.blue));
+        holder.text.setTextColor(getResources().getColor(R.color.white));
       }
 
       return v;
