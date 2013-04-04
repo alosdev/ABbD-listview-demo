@@ -3,6 +3,7 @@ package de.alosdev.listviewdemo;
 import java.util.ArrayList;
 import java.util.Arrays;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -31,6 +32,11 @@ public class MainActivity extends Activity implements OnItemClickListener {
   @Override
   public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
     switch (position) {
+      case 1: {
+        startActivity(new Intent(this, CustomAdapterActivity.class));
+        break;
+      }
+
       case 3: {
         adapter.add("added item " + position);
         break;
