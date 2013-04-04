@@ -7,6 +7,7 @@
         <item >add row</item>
         <item >ListFragment</item>
         <item >MultiSelect</item>
+        <item >Header/Footer</item>
     </string-array>
   
 </resources>
