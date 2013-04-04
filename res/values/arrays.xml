@@ -5,6 +5,7 @@
         <item >custom row view</item>
         <item >ListActivity</item>
         <item >add row</item>
+        <item >ListFragment</item>
     </string-array>
   
 </resources>

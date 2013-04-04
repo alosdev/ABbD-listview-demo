@@ -29,6 +29,10 @@
       android:name="de.alosdev.listviewdemo.ListActivity"
       android:label="ListActivity" >
     </activity>
+    <activity
+      android:name="de.alosdev.listviewdemo.ListFragmentActivity"
+      android:label="ListFragment" >
+    </activity>
   </application>
 
 </manifest>

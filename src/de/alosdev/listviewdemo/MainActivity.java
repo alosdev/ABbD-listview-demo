@@ -47,6 +47,11 @@ public class MainActivity extends Activity implements OnItemClickListener {
         break;
       }
 
+      case 4: {
+        startActivity(new Intent(this, ListFragmentActivity.class));
+        break;
+      }
+
       default: {
         Toast.makeText(this, "you selected position: " + (position + 1), Toast.LENGTH_SHORT).show();
         break;
